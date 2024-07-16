@@ -1,18 +1,18 @@
 # ReviewV1
 Review of what i have learned so far
 
-Basic JSP usage to get data from user and display to know if all works correctly
-Basic H2 usage as DB to storage data
-Basic SQL usage to save and get data from H2
+Basic JSP usage to get data from user and display to know if all works correctly.
+Basic H2 usage as DB to storage data.
+Basic SQL usage to save and get data from H2.
 Basic IoC, Controllers, Repository and Module usage.
 
-JSP stands for UI to see the result of work
-H2 stands for keeping User table and all the data in it
-SQL stands for communication with H2, getting and saving data in DB
-IoC stands for all the object creation and destruction management
-Controller stands for managing the end points
-Repository connects JSP with H2 through SQL
-Module is our class to manage the object properties
+JSP stands for UI to see the result of work.
+H2 stands for keeping User table and all the data in it.
+SQL stands for communication with H2, getting and saving data in DB.
+IoC stands for all the object creation and destruction management.
+Controller stands for managing the end points.
+Repository connects JSP with H2 through SQL.
+Module is our class to manage the object properties.
 
 In index.jsp we got a form that takes basic informations from user.
 By pressing the button we can "register" to database. If registration process went correctly, the information about success will pop up under the button.
@@ -20,7 +20,7 @@ Second button stands for getting all the data stored in table which is displayed
 
 scheme.sql is a file to create table in our H2 Database when project starts.
 
-User.java is our module that have basic properties like
+User.java is our module that have basic properties like:
  - uid thats unique (doesn't work yet)
  - uName that we get from a form
  - uName that we get from a form
