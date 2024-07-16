@@ -1,0 +1,49 @@
+package org.example.review1.controllers;
+
+import org.example.review1.module.User;
+import org.example.review1.repository.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+
+    @Autowired
+    UserRepo userRepo;
+
+    @RequestMapping("/")
+    public String home(){
+        return "index";
+    }
+
+    @PostMapping("addUser")
+    public String addUser(@ModelAttribute User user, Model m){
+
+        int compSize = userRepo.getAll().size();
+        userRepo.save(user);
+        int size = userRepo.getAll().size();
+
+
+        if(size!=compSize){
+            m.addAttribute("message", "Successfuly added user to DB");
+        }else{
+            m.addAttribute("message", "Failed to add User to DB");
+        }
+
+        return "index";
+    }
+
+    @GetMapping("getUsers")
+    public String getUsers(Model m){
+
+        m.addAttribute("userList", userRepo.getAll());
+
+        return "index";
+    }
+
+}
