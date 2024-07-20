@@ -28,6 +28,7 @@ public class UserRepo {
 
         RowMapper<User> mapper = (rs, rowNum) -> {
             User user = new User();
+            user.setUid(rs.getInt(1));
             user.setuName(rs.getString(2));
             user.setuSurname(rs.getString(3));
 
@@ -36,6 +37,40 @@ public class UserRepo {
 
         return template.query(query, mapper);
 
+    }
+
+    public User getById(int id){
+        String query = "select * from Users where id=" + id;
+        User user = new User();
+
+        RowMapper<User> mapper = (rs, rowNum) -> {
+
+            user.setUid(rs.getInt(1));
+            user.setuName(rs.getString(2));
+            user.setuSurname(rs.getString(3));
+
+            return user;
+        };
+
+        return template.queryForObject(query, mapper);
+    }
+
+    public User getByName(String name){
+        String query = "select * from Users where uname='"+name+"'";
+        User user = new User();
+
+        RowMapper<User> mapper = (rs, rowNum) -> {
+
+            user.setUid(rs.getInt(1));
+            user.setuName(rs.getString(2));
+            user.setuSurname(rs.getString(3));
+
+            return user;
+        };
+
+        template.query(query, mapper);
+
+        return user;
     }
 
     public JdbcTemplate getTemplate() {

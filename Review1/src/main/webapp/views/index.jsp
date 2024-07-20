@@ -15,7 +15,17 @@ WELCOME IN REVIEW V1
 </form>
 <br/>
 <form action="getUsers">
-    Get data from Database: <input type="submit">
+    Get all users from Database: <input type="submit">
+</form>
+<br/>
+<form action="getUserById">
+    Input user Id: <input type="text" name="id"><br/>
+    Get user from Database: <input type="submit">
+</form>
+<br/>
+<form action="getUserByName">
+    Input user name: <input type="text" name="name"><br/>
+    Get user from Database: <input type="submit">
 </form>
     ${message}
     <br/>
