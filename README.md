@@ -38,10 +38,13 @@ All we can do with the database so far is:
  - save() - save user to database with all the properties described in user.java file
  - getAll() - get all the data from Users table and make a List<User> thats returned and can be easly displayed in .toString() format
 
-//TODO
+//DONE
 - Repair uid
+- finding user by id and name
+
+//TODO
 - add feature of removing object from table
 - add feature of updating object data thats already saved
 - Whatever I will come up with
 
-Last readme update: 16.07.2024
+Last readme update: 20.07.2024
